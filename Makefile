@@ -1,2 +1,2 @@
-say_hello:
-	echo "Hello World"
+convert:
+	rst2html.py --stylesheet=github-pandoc.css README.rst webREADME.html
