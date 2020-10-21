@@ -9,6 +9,14 @@ Manual Book
 - `GNU Make (PDF) <https://www.gnu.org/software/make/manual/make.pdf>`_
 - `GNU Make (Web) <https://www.gnu.org/software/make/manual/make.html>`_
 
+Install Make
+---------------------------------------------------------------------------------
+
+**Windows**
+
+- `Download and Install Make <http://gnuwin32.sourceforge.net/packages/make.htm>`_
+- add Make to path
+
 Syntax Dasar
 ---------------------------------------------------------------------------------
 
