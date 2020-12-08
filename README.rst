@@ -194,5 +194,40 @@ didefinisikan.
 - ``%.html: %.rst`` > ketika daftar nama di $(OUT) match, maka recipe akan
   dijalankan
 
+Watch
+---------------------------------------------------------------------------------
+
+Agar *command* Makefile dapat dijalankan secara otomatis apabila ada perubahan
+isi file, maka perlu ditambahkan sebuah fungsi untuk melihat status perubahan
+file tersebut. 
+
+*Command* di ubuntu yang bernama **inotifywait** dapat  digunakan untuk mengawasi
+perubahan file dalam sebuah folder dan kemudian menjalankan perintah tertentu
+apabila ada perubahan (setelah tekan save file). 
+
+**Install**
+
+::
+
+	$ sudo apt-get install inotify-tools
+
+**Makefile**
+
+::
+
+	.PHONY: watch
+
+	watch:
+		while true; do \
+			inotifywait -qre close_write path\to\folder; \
+			make targetname; \
+		done
+	
+Dengan menjalankan *script* di bawah ini, setiap kali ada perubahan isi
+file maka *command* akan dijalankan. 
+
+::
+
+	$ make watch
 
 

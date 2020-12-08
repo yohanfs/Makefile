@@ -447,6 +447,7 @@ html,body{        margin: auto;
 <li><a class="reference internal" href="#syntax-dasar" id="id4">Syntax Dasar</a></li>
 <li><a class="reference internal" href="#variables-pattern-rules" id="id5">Variables &amp; Pattern Rules</a></li>
 <li><a class="reference internal" href="#wildcard" id="id6">Wildcard</a></li>
+<li><a class="reference internal" href="#watch" id="id7">Watch</a></li>
 </ul>
 </div>
 <div class="section" id="apa-itu-makefile">
@@ -599,6 +600,34 @@ all: $(OUT)
 <li><tt class="docutils literal">%.html: %.rst</tt> &gt; ketika daftar nama di $(OUT) match, maka recipe akan
 dijalankan</li>
 </ul>
+</div>
+<div class="section" id="watch">
+<h1><a class="toc-backref" href="#id7">Watch</a></h1>
+<p>Agar <em>command</em> Makefile dapat dijalankan secara otomatis apabila ada perubahan
+isi file, maka perlu ditambahkan sebuah fungsi untuk melihat status perubahan
+file tersebut.</p>
+<p><em>Command</em> di ubuntu yang bernama <strong>inotifywait</strong> dapat  digunakan untuk mengawasi
+perubahan file dalam sebuah folder dan kemudian menjalankan perintah tertentu
+apabila ada perubahan (setelah tekan save file).</p>
+<p><strong>Install</strong></p>
+<pre class="literal-block">
+$ sudo apt-get install inotify-tools
+</pre>
+<p><strong>Makefile</strong></p>
+<pre class="literal-block">
+.PHONY: watch
+
+watch:
+        while true; do \
+                inotifywait -qre close_write path\to\folder; \
+                make targetname; \
+        done
+</pre>
+<p>Dengan menjalankan <em>script</em> di bawah ini, setiap kali ada perubahan isi
+file maka <em>command</em> akan dijalankan.</p>
+<pre class="literal-block">
+$ make watch
+</pre>
 </div>
 </div>
 </body>
