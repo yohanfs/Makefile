@@ -236,7 +236,8 @@ file maka *command* akan dijalankan.
 
 	$ make watch
 
-.. Footnotes
+Footnotes
+---------------------------------------------------------------------------------
 
 .. [#]  `example01 <example01/Makefile>`_
 .. [#]  `example02 <example02/Makefile>`_
