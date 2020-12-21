@@ -22,6 +22,12 @@ Install Make
 - `Download and Install Make <http://gnuwin32.sourceforge.net/packages/make.htm>`_
 - add Make to path
 
+**Ubuntu**
+
+::
+
+	$ sudo apt-get install make
+
 Syntax Dasar
 ---------------------------------------------------------------------------------
 
@@ -37,7 +43,7 @@ Syntax Dasar
 *target*. *target*, *prerequisites*, dan *recipe* membentuk sebuah *rule*. 
 
 
-**Single Command**
+**Single Command** [#]_
 
 Sebagai contoh, buatlah sebuah file tanpa *extension* dengan nama Makefile. 
 
@@ -69,7 +75,7 @@ Hasilnya adalah:
    $ make
    Hello World
 
-**Lebih dari Satu Commands**
+**Lebih dari Satu Commands** [#]_
 
 Apabila terdapat lebih dari 1 *target*, dengan menggunakan *syntax* di bawah ini 
 maka hanya *target* yang ditulis pertama kali yang akan dijalankan. 
@@ -230,4 +236,7 @@ file maka *command* akan dijalankan.
 
 	$ make watch
 
+.. Footnotes
 
+.. [#]  `example01 <example01/Makefile>`_
+.. [#]  `example02 <example02/Makefile>`_
